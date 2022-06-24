@@ -63,11 +63,11 @@ flex-direction: row-reverse;
 
 .bio h2 {
 font-size: 50px;
-margin-left: 15px;
+margin-left: auto;
 }
 
 .bio p {
-margin-left: 15px;
+margin-left: auto;
 }
 
 .avatar {
@@ -95,8 +95,9 @@ margin-left: 15px;
   
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1.5fr 1fr;
-    grid-template-areas: "run run run run"
-                         "led calc robo surf";
+    grid-template-areas:
+    "run run run run"
+    "led calc robo surf";
 
     background-color: rgb(0,81,46,0.4);
     color: white;
@@ -106,28 +107,45 @@ margin-left: 15px;
     background-color: black;
 }
 
-.work-img {
-    object-fit: cover;
+#run {
+    grid-area: run;
+    /* background-image: url(../images/run-buddy.svg); */
+    background-size: cover;
 }
 
-#surf {
-    grid-area: surf;
+.test {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.test-2 img{
+    max-height: 200px;
 }
 
 #led {
     grid-area: led;
+    /* background-image: url(../images/LED.svg); */
+    background-size: cover;
+    
 }
 
 #calc {
     grid-area: calc;
+    /* background-image: url(../images/calc.svg); */
+    background-size: cover;
 }
 
 #robo {
     grid-area: robo;
+    /* background-image: url(../images/robo.svg); */
+    background-size: cover;
 }
 
 #surf {
     grid-area: surf;
+    /* background-image: url(../images/surf.svg); */
+    background-size: cover;
 }
 
 /* End work section */
@@ -143,6 +161,15 @@ margin-left: 15px;
 
 }
 
+/* /*nav section */
+
+.footer div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-around;
+    list-style: none;
+}
 
 a:link {
     color: whitesmoke;
@@ -164,13 +191,15 @@ a:active{
     text-decoration: none;    
 }
 
-@media only screen and (max-width:550px){
+/* a.hover:hover { color: rgb(31,34,39,0.4) } */
+
+@media only screen and (max-width:800px){
     .bio {
         flex-direction: column-reverse;
         }
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 2.2fr 1.2fr 1.2fr 1.2fr 1.2fr;
+        grid-template-rows: 4.2fr 2.2fr 2.2fr 2.2fr 2.2fr;
         grid-template-areas: 
         "run"
         "led"
@@ -178,5 +207,4 @@ a:active{
         "robo"
         "surf";
     }
-        
 }
